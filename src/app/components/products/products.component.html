@@ -1,0 +1,38 @@
+<div id="logo">
+    <img src="assets/photo/szynszyl.png" (click)="realoadCat('');" style="width: 120px;" alt="...">
+    <h4>Szynszyl-Shop</h4>
+</div>
+<div class="Row">
+    <div class="cos" *ngFor="let category of categoryAll">
+        <div class="btn-group mr-1">
+            <button type="button" class="btn btn-primary" (click)="realoadCat(category.category);">{{category.category}}</button>
+            <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                    <button class="dropdown-item" *ngFor="let catItem of category.subCategory" (click)="reloadSub(category.category,catItem);">{{catItem}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4" *ngFor="let item of productsAll.items">
+        <div class="card" style="width: 18rem;">
+            <img src="assets/photo/{{item.imgPath.replace('C:\\temp\\','')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.productName}}</h5>
+                <p class="card-text">{{item.productDesc}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{item.category}}</li>
+                <li class="list-group-item">{{item.subcategory}}</li>
+                <li class="list-group-item">{{item.bruttoPrice}} zł</li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="btn btn-primary">Otwórz</a>
+                &nbsp;
+                <a href="#" class="btn btn-primary">Dodaj do koszyka</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.card{
+    margin-bottom: 5%;
+    margin-right: 5%;
+}
+
+.Row{
+    display: table;
+}
+.cos{
+    display: table-cell;
+}
