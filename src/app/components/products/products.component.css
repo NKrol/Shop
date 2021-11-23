@@ -2,10 +2,16 @@
     margin-bottom: 5%;
     margin-right: 5%;
 }
-
-.Row{
+.RowOfCategory{
     display: table;
+    flex-wrap: wrap;
 }
 .cos{
     display: table-cell;
+    flex-wrap: wrap;
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
 }

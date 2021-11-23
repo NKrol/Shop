@@ -13,9 +13,9 @@ export class CategoryService {
     ) {
 
    }
-
+   baseUrl: string = "https://localhost:5001/";
    getCategory() : Observable<Category[]>
    {
-     return this.http.get<Category[]>("https://localhost:44360/category/get/")
+     return this.http.get<Category[]>( this.baseUrl + "category/get/")
    }
 }
