@@ -52,7 +52,7 @@ export class ProductsComponent implements OnInit {
   addToCart(productId: string): void {
     let cart = localStorage.getItem('cart');
     if(cart){
-      cart += ";" + productId;
+      cart += productId + ';';
       localStorage.setItem('cart', cart);
     }else{
       localStorage.setItem('cart', productId);

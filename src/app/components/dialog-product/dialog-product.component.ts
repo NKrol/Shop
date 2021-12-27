@@ -24,7 +24,7 @@ export class DialogProductComponent implements OnInit {
   addToCart(productId: number): void {
     let cart = localStorage.getItem('cart');
     if(cart){
-      cart += ";" + productId;
+      cart += productId + ";" ;
       localStorage.setItem('cart', cart);
     }else{
       localStorage.setItem('cart', productId.toString());

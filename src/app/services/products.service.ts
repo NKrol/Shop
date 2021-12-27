@@ -10,7 +10,7 @@ import { ProductDetails } from '../components/dialog-product/productDetails';
 })
 export class ProductsService {
 
-  baseUrl: string = "https://localhost:5001/product/";
+  baseUrl: string = "https://10.8.0.1:8201/product/";
   constructor(
     private http: HttpClient
   ) { }
@@ -29,5 +29,11 @@ export class ProductsService {
 
   getSingleProduct(productId: any): Observable<ProductDetails>{
     return this.http.get<ProductDetails>(this.baseUrl + productId);
+  }
+
+  getToCart(productsIds: string): Observable<any>{
+    return this.http.get<any>(this.baseUrl + "tocart", {params: {
+      numbers: productsIds
+    }} );
   }
 }

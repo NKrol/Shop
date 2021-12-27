@@ -14,12 +14,14 @@ import {MatButtonModule} from '@angular/material/button';
 import { MaterialModule } from '../material-module';
 import {NavComponent} from './nav/nav.component';
 import { DialogProductComponent } from './components/dialog-product/dialog-product.component';
+import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     NavComponent,
-    DialogProductComponent
+    DialogProductComponent,
+    ShopCartComponent
   ],
   imports: [
     MatMenuModule,
