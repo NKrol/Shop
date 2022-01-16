@@ -19,7 +19,6 @@
     width: 100%;
 }
 .cos{
-    display: list-item;
     flex-wrap: wrap;
     margin-bottom: 5px;
     margin-left: 5px;
@@ -27,8 +26,20 @@
 .card{
     margin-bottom: 5%;
     margin-right: 5px;
-    width: 200px;
-    height: 28rem;
+    width: 220px;
+    height: 31rem;
+}
+.card-body{
+    height: 15px;
+}
+.card-buttons{
+    height: 3rem;
+    margin: 5px 10px 0px 30px;
+}
+.list-group{
+    height: 9rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .col-sm-2{
     display: table-cell;
@@ -68,6 +79,20 @@
 .sort-product-dropdown{
     margin-bottom: 20px;
 }
-.card-body{
-    height: 10rem;
+.grid-container-pages {
+    display: flex;
+    align-items: center;
 }
+.current-page{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.previous-page{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.next-page{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+  
