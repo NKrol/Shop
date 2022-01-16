@@ -1,17 +1,73 @@
-.card{
-    margin-bottom: 5%;
-    margin-right: 5%;
-}
+.grid-container {
+    display: grid;
+    grid-template-areas:
+      'left right right right right right';
+    grid-gap: 10px;
+  }
 .RowOfCategory{
     display: table;
     flex-wrap: wrap;
+    grid-area: left;
+    padding: 10px 5px 0px 5px;
+    background: #2F4F4F;
+    width: 100%;
+    height: 100%;
+}
+.row{
+    grid-area: right;
+    display: inline-flex;
+    width: 100%;
 }
 .cos{
-    display: table-cell;
+    display: list-item;
     flex-wrap: wrap;
+    margin-bottom: 5px;
+    margin-left: 5px;
 }
-
+.card{
+    margin-bottom: 5%;
+    margin-right: 5px;
+    width: 200px;
+    height: 28rem;
+}
+.col-sm-2{
+    display: table-cell;
+    max-width: 100%;
+}
 .buttons{
     display: flex;
     flex-wrap: wrap;
+}
+
+.btn-primary{
+    margin-bottom: 5px;
+}
+.search-container{
+  margin-left: 5px;
+  margin-bottom: 5px;
+  width: 255px;
+  height: 35px;
+}
+.search-input{
+    width: 80%;
+    height: 35px;
+}
+.search-submit{
+    width: 10%;
+    height: 35px;
+}
+.btn-cat-name{
+    width: 200px;
+}
+.sort-product{
+    margin-left: 5px;
+}
+.sort-product-main{
+    margin-bottom: 20px;
+}
+.sort-product-dropdown{
+    margin-bottom: 20px;
+}
+.card-body{
+    height: 10rem;
 }

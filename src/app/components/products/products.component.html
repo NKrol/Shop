@@ -37,7 +37,6 @@
             <img src="{{item.ImgPath}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{item.ProductName}}</h5>
-                <p class="card-text">{{item.ProductDesc}}</p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">{{item.Category}}</li>
@@ -47,7 +46,7 @@
             <div class="card-body">
                 <button (click)="openDialog(item.ProductId);" class="btn btn-primary">Otwórz</button>
                 &nbsp;
-                <button (click)="addToCart(item.ProductId)" class="btn btn-primary">Dodaj do koszyka</button>
+                <button (click)="addToCart(item.ProductId)" class="btn btn-primary">Dodaj</button>
             </div>
         </div>
     </div>

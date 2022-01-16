@@ -17,6 +17,22 @@ export class ShopCartComponent implements OnInit {
     this.numbers = localStorage.getItem('cart');
   }
 
+  minusThisProduct(id: string):void {
+    var rawCarts = localStorage.getItem('cart');
+    var index = rawCarts?.lastIndexOf(id + ";");
+
+    rawCarts = rawCarts!.replace(id + ";", "");
+    localStorage.setItem('cart', rawCarts!);
+    
+    window.location.reload();
+  }
+  plusThisProduct(id: any):void {
+    var rawCarts = localStorage.getItem('cart');
+    rawCarts += id + ';';
+    localStorage.setItem('cart', rawCarts!);
+    
+    window.location.reload();
+  }
   _getCart(): void {
     this.productService.getToCart(this.numbers).subscribe((data: any) => {
       this.carts = data;
@@ -45,7 +61,7 @@ export class ShopCartComponent implements OnInit {
   }
   removeFromCart(productId: number){
     let allIds = localStorage.getItem('cart');
-    allIds = allIds!.replace(productId.toString() + ";", '');
+    allIds = allIds!.split(productId.toString() + ";").join("");
     localStorage.setItem('cart', allIds);
     window.location.reload();
   }

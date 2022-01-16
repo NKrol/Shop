@@ -55,7 +55,7 @@ export class ProductsComponent implements OnInit {
       cart += productId + ';';
       localStorage.setItem('cart', cart);
     }else{
-      localStorage.setItem('cart', productId);
+      localStorage.setItem('cart', productId + ";");
     }
   }
 

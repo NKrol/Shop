@@ -10,7 +10,7 @@ import { ProductDetails } from '../components/dialog-product/productDetails';
 })
 export class ProductsService {
 
-  baseUrl: string = "http://localhost:40435/product/";
+  baseUrl: string = "https://10.8.0.1:8201/product/";
   constructor(
     private http: HttpClient
   ) { }

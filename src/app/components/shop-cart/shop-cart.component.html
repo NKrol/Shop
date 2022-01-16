@@ -19,8 +19,8 @@
         <tr *ngFor="let item of carts">
           <td>{{item.ProductName}}</td>
           <td>{{item.BruttoPrice | currency:"PLN":"symbol"}}</td>
-          <td>2</td>
-          <td>{{item.BruttoPrice * 2 | currency:"PLN":"symbol"}}</td>
+          <td><button (click)="minusThisProduct(item.ProductId)">-</button>{{item.Quantity}}<button (click)="plusThisProduct(item.ProductId)">+</button></td>
+          <td>{{item.BruttoPrice * item.Quantity | currency:"PLN":"symbol"}}</td>
           <td>
             <button (click)="removeFromCart(item.ProductId)" class="btn btn-primary">Remove</button>
           </td>
