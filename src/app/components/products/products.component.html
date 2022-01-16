@@ -1,7 +1,25 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="grid-container">
 <div class="RowOfCategory">
+    <div class="search-container">
+          <input class="search-input" type="text" placeholder="Search.." name="search">
+          <button class="search-submit"type="submit"><i class="fa fa-search"></i></button>
+      </div>
+      <div class="sort-product btn-group mr-1">
+        <span class="sort-product-main btn btn-primary btn-cat-name">Sort...</span>
+        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+            <button class="btn btn-primary dropdown-toggle-split sort-product-dropdown" ngbDropdownToggle></button>
+            <div class="dropdown-menu" ngbDropdownMenu>
+                <button class="dropdown-item">Cena rosnąco</button>
+                <button class="dropdown-item">Cena malejąco</button>
+                <button class="dropdown-item">Nazwa od A do Z</button>
+                <button class="dropdown-item">Nazwa od Z do A</button>
+            </div>
+        </div>
+    </div>
     <div class="cos" *ngFor="let category of categoryAll">
         <div class="btn-group mr-1">
-            <button type="button" class="btn btn-primary"
+            <button type="button" class="btn btn-primary btn-cat-name"
                 (click)="realoadCat(category.Category);">{{category.Category}}</button>
             <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
                 <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
@@ -15,7 +33,7 @@
 </div>
 <div class="row">
     <div class="col-sm-2" *ngFor="let item of productsAll.Items">
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <img src="{{item.ImgPath}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{item.ProductName}}</h5>
@@ -33,4 +51,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
