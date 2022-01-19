@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from './product';
 import {CategoryService} from 'src/app/services/category/category.service';
@@ -18,6 +18,11 @@ export class ProductsComponent implements OnInit {
   subCategorySearch: string = "";
   pageSize: string = "15";
   pageNumber: number = 1;
+  searchPhrase: string = "";
+
+  sortName: boolean = true;
+  sortPrice: boolean = false;
+  sortAsc : boolean = true;
 
   categoryAll: any;
   constructor(
@@ -25,6 +30,11 @@ export class ProductsComponent implements OnInit {
     private categoryService: CategoryService,
     private matDialog: MatDialog
   ) { }
+
+  changePhrase(a: any){
+    this.searchPhrase = a;
+    this.loadProduct();
+  }
 
   ngOnInit(): void {
     this.loadProduct();
@@ -34,6 +44,53 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  addPage(){
+    let check = this.pageNumber;
+    if(check++ < this.productsAll.TotalItems){ 
+      this.pageNumber++;
+      this.loadProduct();
+    }
+    else{
+      alert("Jesteś na ostatniej stronie")
+    }
+  }
+  minusPage(){
+    let check = this.pageNumber;
+    if(check-- > 1){ 
+    this.pageNumber--;
+    this.loadProduct();
+    }
+    else{
+      alert("Nie można wyśiwetlić strony mniejszej od 1")
+    }
+  }
+
+  sortNameConfig(asc: any){
+    this.sortName = true;
+    this.sortPrice = false;
+    this.sortAsc = asc;
+    this.pageNumber = 1;
+    this.loadProduct();
+  }
+
+  sortPriceConfig(asc: any){
+    this.sortName = false;
+    this.sortPrice = true;
+    this.sortAsc = asc;
+    this.pageNumber = 1;
+    this.loadProduct();
+  }
+
+  resetFilters(){
+    this.sortPrice = false;
+    this.sortName = true;
+    this.sortAsc = true;
+    this.searchPhrase = "";
+    this.categorySearch = "";
+    this.subCategorySearch = "";
+    this.pageNumber = 1;
+    this.loadProduct();
+  }
   changeSize(): void {
     this.loadProduct();
   }
@@ -65,6 +122,10 @@ export class ProductsComponent implements OnInit {
     this.pageNumber = 1;
     this.loadProduct();
   }
+  findPhrease(){
+    this.pageNumber = 1;
+    this.loadProduct();
+  }
 
   reloadSub(category: string, subcategory: string){
     this.categorySearch = category;
@@ -74,7 +135,7 @@ export class ProductsComponent implements OnInit {
   }
 
   loadProduct(){
-    this.productService.getProducts("", this.pageNumber, Number.parseInt(this.pageSize) , this.categorySearch, this.subCategorySearch).subscribe(res => {
+    this.productService.getProducts(this.searchPhrase, this.pageNumber, Number.parseInt(this.pageSize) , this.categorySearch, this.subCategorySearch, this.sortName, this.sortPrice, this.sortAsc).subscribe(res => {
       this.productsAll = res
     });
   }

@@ -2,18 +2,18 @@
 <div class="grid-container">
 <div class="RowOfCategory">
     <div class="search-container">
-          <input class="search-input" type="text" placeholder="Search.." name="search">
-          <button class="search-submit"type="submit"><i class="fa fa-search"></i></button>
+          <input class="search-input" (keyup.enter)="findPhrease();" [(ngModel)]="searchPhrase" type="text" placeholder="Search.." name="search">
+          <button class="search-submit"type="submit" (click)="findPhrease();"><i class="fa fa-search"></i></button>
       </div>
       <div class="sort-product btn-group mr-1">
-        <span class="sort-product-main btn btn-primary btn-cat-name">Sort...</span>
+        <span class="sort-product-main btn btn-primary btn-cat-name" (click)="resetFilters();">Reset filters</span>
         <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
             <button class="btn btn-primary dropdown-toggle-split sort-product-dropdown" ngbDropdownToggle></button>
             <div class="dropdown-menu" ngbDropdownMenu>
-                <button class="dropdown-item">Cena rosnąco</button>
-                <button class="dropdown-item">Cena malejąco</button>
-                <button class="dropdown-item">Nazwa od A do Z</button>
-                <button class="dropdown-item">Nazwa od Z do A</button>
+                <button class="dropdown-item" (click)="sortPriceConfig(true)">Cena rosnąco</button>
+                <button class="dropdown-item" (click)="sortPriceConfig(false)">Cena malejąco</button>
+                <button class="dropdown-item" (click)="sortNameConfig(true)">Nazwa od A do Z</button>
+                <button class="dropdown-item" (click)="sortNameConfig(false)">Nazwa od Z do A</button>
             </div>
         </div>
     </div>
@@ -31,7 +31,21 @@
         </div>
     </div>
 </div>
+
+
+
 <div class="row">
+    <div class="grid-container-pages">
+        <div class="previous-page">
+            <button class="previos-page-button btn btn-primary" (click)="minusPage();">Poprzednia strona</button>
+        </div>
+        <div class="current-page">
+            <label class="current-page-label">Strona: {{pageNumber}} / {{productsAll.TotalPages}} </label>
+        </div>
+        <div class="next-page">
+            <button class="next-page-button btn btn-primary" (click)="addPage();">Następna strona</button>
+        </div>
+    </div>
     <div class="col-sm-2" *ngFor="let item of productsAll.Items">
         <div class="card">
             <img src="{{item.ImgPath}}" class="card-img-top" alt="...">
