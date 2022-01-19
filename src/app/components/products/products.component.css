@@ -29,6 +29,9 @@
     width: 220px;
     height: 31rem;
 }
+.card-img-top{
+    margin-top: 5px;
+}
 .card-body{
     height: 15px;
 }
@@ -73,10 +76,10 @@
 .sort-product{
     margin-left: 5px;
 }
-.sort-product-main{
+.sort-product-main {
     margin-bottom: 20px;
 }
-.sort-product-dropdown{
+.sort-product-dropdown {
     margin-bottom: 20px;
 }
 .card-body{
