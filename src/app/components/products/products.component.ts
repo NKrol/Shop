@@ -35,6 +35,10 @@ export class ProductsComponent implements OnInit {
     this.searchPhrase = a;
     this.loadProduct();
   }
+  changePageSize(asd: any){
+    this.pageSize = asd;
+    this.loadProduct();
+  }
 
   ngOnInit(): void {
     this.loadProduct();
@@ -89,6 +93,7 @@ export class ProductsComponent implements OnInit {
     this.categorySearch = "";
     this.subCategorySearch = "";
     this.pageNumber = 1;
+    this.pageSize = "15";
     this.loadProduct();
   }
   changeSize(): void {

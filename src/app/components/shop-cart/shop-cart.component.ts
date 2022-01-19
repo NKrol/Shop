@@ -16,7 +16,9 @@ export class ShopCartComponent implements OnInit {
     public router: Router) {
     this.numbers = localStorage.getItem('cart');
   }
-
+  submitOrder(){
+    
+  }
   minusThisProduct(id: string):void {
     var rawCarts = localStorage.getItem('cart');
     var index = rawCarts?.lastIndexOf(id + ";");
