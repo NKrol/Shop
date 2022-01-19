@@ -32,17 +32,31 @@
     </div>
 </div>
 <div class="row">
+    
     <div class="grid-container-pages">
+        <div class="number-of-visible-products">
+            <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                <button class="btn btn-primary dropdown-toggle-split number-of-visible-products-dropdown" ngbDropdownToggle>Number of products </button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                    <button class="dropdown-item">10</button>
+                    <button class="dropdown-item">15</button>
+                    <button class="dropdown-item">20</button>
+                    <button class="dropdown-item">30</button>
+                </div>
+            </div>
+        </div>
         <div class="previous-page">
-            <button class="previos-page-button btn btn-primary">Poprzednia strona</button>
+            <button class="page-button previos-page-button btn btn-primary">Previous page</button>
         </div>
         <div class="current-page">
-            <label class="current-page-label">Strona: </label>
+            <label class="current-page-label">Current page: </label>
+            <label class="current-page-label"></label>
         </div>
         <div class="next-page">
-            <button class="next-page-button btn btn-primary">Następna strona</button>
+            <button class="page-button btn btn-primary">Next page</button>
         </div>
 </div>
+<p></p>
     <div class="col-sm-2" *ngFor="let item of productsAll.Items">
         <div class="card">
             <img src="{{item.ImgPath}}" class="card-img-top" alt="...">
@@ -52,7 +66,7 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">{{item.Category}}</li>
                 <li class="list-group-item">{{item.Subcategory}}</li>
-                <li class="list-group-item">{{item.BruttoPrice}} zł</li>
+                <li class="list-group-item">{{item.BruttoPrice | currency:"PLN ":"symbol"}}</li>
             </ul>
             <div class="card-buttons">
                 <button (click)="openDialog(item.ProductId);" class="btn btn-primary">Otwórz</button>

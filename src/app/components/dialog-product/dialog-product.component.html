@@ -15,7 +15,7 @@
         <!-- <img src="{{productDetails.ImgPath}}"> -->
         <img src="{{productDetails.ImgPath}}" style="width: 285px;">
     </div>
-    <div class="div2"> <p>Cena:</p> PLN{{productDetails.BruttoPrice}} </div>
+    <div class="div2"> <p>Cena:</p> {{productDetails.BruttoPrice | currency:"PLN ":"symbol"}} </div>
     <div class="div3"> <p>Kod produktu:</p> {{productDetails.ProductCode}} </div>
     <div class="div4"> <p>Dostępna ilość:</p> {{productDetails.Quantity}} </div>
     <div class="div5"> <p>Opis produktu:</p> {{productDetails.ProductDesc}} </div>
