@@ -79,26 +79,6 @@
 .sort-product-dropdown{
     margin-bottom: 20px;
 }
-<<<<<<< HEAD
 .card-body{
     height: 10rem;
 }
-=======
-.grid-container-pages {
-    display: flex;
-    align-items: center;
-}
-.current-page{
-    margin-left: 10px;
-    margin-top: 10px;
-}
-.previous-page{
-    margin-left: 10px;
-    margin-top: 10px;
-}
-.next-page{
-    margin-left: 10px;
-    margin-top: 10px;
-}
-  
->>>>>>> 48209fb98abcbf2fd8cb44ba4a2128aedda2cdc8
