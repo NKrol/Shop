@@ -30,8 +30,38 @@
   .minus-plus-product{
     margin: 0px 2px 0px 2px;
   }
-  .submit-order{     
+  .client-info{
     margin-top: 5px;
-    width: 200px;
-    float: right;
+    text-align: center;
   }
+  .submit-order{     
+    margin-top: 20px;
+    width: 200px;
+  }
+  .client-info {
+    text-align: center;
+    align-content: center;
+    width: 350px;
+    margin: 0 auto;
+  }
+  .client-info-row:after {
+   content: "";
+   display: table;
+   clear: both;
+  }
+  .client-info-column {
+    float:left;
+    width:40%;
+    text-align: right;
+  }
+.client-info-input {
+  margin-bottom: 5px;
+  margin-left: 10px;
+  height: 25px;
+  width: 150px;
+}
+.client-info-label {
+  margin-bottom: 5px;
+  height: 25px;
+  width: 200px;
+}

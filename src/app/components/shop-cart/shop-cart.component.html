@@ -25,8 +25,37 @@
             <button (click)="removeFromCart(item.ProductId)" class="btn btn-primary">Remove</button>
           </td>
         </tr>
-        <button class="submit-order btn btn-primary" (click)="submitOrder();">Submit order</button>
+        
       </tbody>
     </table>
+    <div class="client-info">
+      <label>Please, enter your shipping details</label><br><br>
+      <div class="client-info-row">
+        <div class="client-info-column">
+          <label class="client-info-label">Email:</label><br>
+          <label class="client-info-label">First name:</label><br>
+          <label class="client-info-label">Last name:</label><br>
+          <label class="client-info-label">Phone:</label><br>
+          <label class="client-info-label">ZIP-Code:</label><br>
+          <label class="client-info-label">City:</label><br>
+          <label class="client-info-label">Street name:</label><br>
+          <label class="client-info-label">Street number:</label><br>
+          <label class="client-info-label">Apartment number:</label><br> 
+        </div>
+        <div class="client-info-column">
+          <input class="client-info-input" type="email"><br>
+          <input class="client-info-input" type="text"><br>
+          <input class="client-info-input" type="text"><br>    
+          <input class="client-info-input" type="tel"><br>
+          <input class="client-info-input" type="text" pattern="[0-9]*"><br>
+          <input class="client-info-input" type="text"><br>
+          <input class="client-info-input" type="text"><br>
+          <input class="client-info-input" type="text" pattern="[0-9]*"><br>  
+          <input class="client-info-input" type="text" pattern="[0-9]*"><br>   
+        </div>
+    </div>
+      
+    <button class="submit-order btn btn-primary" (click)="submitOrder();">Submit order</button>
+    </div>
   </body>
 </html>

@@ -10,10 +10,10 @@
         <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
             <button class="btn btn-primary dropdown-toggle-split sort-product-dropdown" ngbDropdownToggle></button>
             <div class="dropdown-menu" ngbDropdownMenu>
-                <button class="dropdown-item" (click)="sortPriceConfig(true)">Cena rosnąco</button>
-                <button class="dropdown-item" (click)="sortPriceConfig(false)">Cena malejąco</button>
-                <button class="dropdown-item" (click)="sortNameConfig(true)">Nazwa od A do Z</button>
-                <button class="dropdown-item" (click)="sortNameConfig(false)">Nazwa od Z do A</button>
+                <button class="dropdown-item" (click)="sortPriceConfig(true)">Price ascending</button>
+                <button class="dropdown-item" (click)="sortPriceConfig(false)">Price descending</button>
+                <button class="dropdown-item" (click)="sortNameConfig(true)">Name A-Z</button>
+                <button class="dropdown-item" (click)="sortNameConfig(false)">Name Z-A</button>
             </div>
         </div>
     </div>
@@ -49,13 +49,13 @@
             </div>
         </div>
         <div class="previous-page">
-            <button class="previos-page-button btn btn-primary" (click)="minusPage();">Poprzednia strona</button>
+            <button class="page-button btn btn-primary" (click)="minusPage();">Previous page</button>
         </div>
         <div class="current-page">
-            <label class="current-page-label">Strona: {{pageNumber}} / {{productsAll.TotalPages}} </label>
+            <label class="current-page-label">Current page: {{pageNumber}} / {{productsAll.TotalPages}} </label>
         </div>
         <div class="next-page">
-            <button class="next-page-button btn btn-primary" (click)="addPage();">Następna strona</button>
+            <button class="page-button btn btn-primary" (click)="addPage();">Next page</button>
         </div>
     </div>
     <div class="col-sm-2" *ngFor="let item of productsAll.Items">
@@ -69,10 +69,10 @@
                 <li class="list-group-item">{{item.Subcategory}}</li>
                 <li class="list-group-item">{{item.BruttoPrice | currency:"PLN ":"symbol"}}</li>
             </ul>
-            <div class="card-body">
-                <button (click)="openDialog(item.ProductId);" class="btn btn-primary">Otwórz</button>
+            <div class="card-buttons">
+                <button (click)="openDialog(item.ProductId);" class="btn btn-primary">Open</button>
                 &nbsp;
-                <button (click)="addToCart(item.ProductId)" class="btn btn-primary">Dodaj</button>
+                <button (click)="addToCart(item.ProductId)" class="btn btn-primary">Add to cart</button>
             </div>
         </div>
     </div>

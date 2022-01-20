@@ -37,7 +37,7 @@
 }
 .card-buttons{
     height: 3rem;
-    margin: 5px 10px 0px 30px;
+    margin: 0 auto;
 }
 .list-group{
     height: 9rem;
@@ -82,6 +82,34 @@
 .sort-product-dropdown {
     margin-bottom: 20px;
 }
-.card-body{
-    height: 10rem;
+.top-of-row{
+    display: inline-block;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+}
+
+.grid-container-pages {
+    display: grid;
+    grid-template-columns: auto 150px 160px 150px;
+    align-items: center;
+    margin: 0 auto;
+}
+.number-of-visible-products{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.current-page{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.previous-page{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.next-page{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.page-button{
+    width: 130px;
 }
